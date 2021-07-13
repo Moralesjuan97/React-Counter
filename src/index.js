@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+let counter = 0;
+setInterval(() => {
+  let first = Math.floor(counter / 1000);
+  let second = Math.floor(counter / 100);
+  let third = Math.floor(counter / 10);
+  let fourth = Math.floor(counter / 1);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+  counter ++ ;
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <App
+        digitFour={first}
+        digitThree={second}
+        digitTwo={third}
+        digitOne={fourth}
+      />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+}, 1000);
 reportWebVitals();

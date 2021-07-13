@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 
-function App() {
+
+const App = props => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="Container">
+        <div className="clock"><FontAwesomeIcon icon={faClock}/> </div>
+        <div className="fourthN">{props.digitFour % 10 }</div>
+        <div className="thirdN">{props.digitThree % 10 }</div>
+        <div className="secondN">{props.digitTwo % 10 }</div>
+        <div className="firstN">{props.digitOne % 10}</div>
+      </div>
   );
-}
+
+};
 
 export default App;
